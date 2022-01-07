@@ -276,388 +276,393 @@ function destroyMachine(id){
 }
 
 function updateCost(){
-	PSUSilverCost = Math.floor(770000 * Math.pow(1.1,PSU));
-	PSUGoldCost = Math.floor(770000 * Math.pow(1.1,PSU));
-	PSUUraniumCost = Math.floor(550000 * Math.pow(1.1,PSU));
+	PSUSilverCost = costModel(770000, PSU);
+	PSUGoldCost = costModel(770000, PSU);
+	PSUUraniumCost = costModel(550000, PSU);
 
-	PSUT2SilverCost = Math.floor(9300000 * Math.pow(1.1,PSUT2));
-	PSUT2GoldCost = Math.floor(9300000 * Math.pow(1.1,PSUT2));
-	PSUT2UraniumCost = Math.floor(6800000 * Math.pow(1.1,PSUT2));
+	PSUT2SilverCost = costModel(9300000, PSUT2);
+	PSUT2GoldCost = costModel(9300000, PSUT2);
+	PSUT2UraniumCost = costModel(6800000, PSUT2);
 
-	heaterLunariteCost = Math.floor(75000 * Math.pow(1.1,heater) * T1Price);
-	heaterGemCost = Math.floor(68000 * Math.pow(1.1,heater) * T1Price);
-	heaterSiliconCost = Math.floor(59000 * Math.pow(1.1,heater) * T1Price);
+	heaterLunariteCost = costModel(75000, heater) * T1Price;
+	heaterGemCost = costModel(68000, heater) * T1Price;
+	heaterSiliconCost = costModel(59000, heater) * T1Price;
 
-	plasmaticLunariteCost = Math.floor(810000 * Math.pow(1.1,plasmatic));
-	plasmaticSiliconCost = Math.floor(720000 * Math.pow(1.1,plasmatic));
-	plasmaticMeteoriteCost = Math.floor(970 * Math.pow(1.1,plasmatic));
+	plasmaticLunariteCost = costModel(810000, plasmatic);
+	plasmaticSiliconCost = costModel(720000, plasmatic);
+	plasmaticMeteoriteCost = costModel(970, plasmatic);
 
-	bathLavaCost = Math.floor(6200000 * Math.pow(1.1,bath));
-	bathGoldCost = Math.floor(5900000 * Math.pow(1.1,bath));
-	bathMeteoriteCost = Math.floor(12100 * Math.pow(1.1,bath));
+	bathLavaCost = costModel(6200000, bath);
+	bathGoldCost = costModel(5900000, bath);
+	bathMeteoriteCost = costModel(12100, bath);
 
-	batteryMetalCost = Math.floor(50000 * Math.pow(1.1,battery));
-	batteryGemCost = Math.floor(50000 * Math.pow(1.1,battery));
-	batteryLunariteCost = Math.floor(30000 * Math.pow(1.1,battery));
+	batteryMetalCost = costModel(50000, battery);
+	batteryGemCost = costModel(50000, battery);
+	batteryLunariteCost = costModel(30000, battery);
 
-	batteryT2MetalCost = Math.floor(550000 * Math.pow(1.1,batteryT2));
-	batteryT2GemCost = Math.floor(550000 * Math.pow(1.1,batteryT2));
-	batteryT2LunariteCost = Math.floor(330000 * Math.pow(1.1,batteryT2));
+	batteryT2MetalCost = costModel(550000, batteryT2);
+	batteryT2GemCost = costModel(550000, batteryT2);
+	batteryT2LunariteCost = costModel(330000, batteryT2);
 
-	batteryT3MetalCost = Math.floor(5500000 * Math.pow(1.1,batteryT3));
-	batteryT3GemCost = Math.floor(5500000 * Math.pow(1.1,batteryT3));
-	batteryT3LunariteCost = Math.floor(3300000 * Math.pow(1.1,batteryT3));
+	batteryT3MetalCost = costModel(5500000, batteryT3);
+	batteryT3GemCost = costModel(5500000, batteryT3);
+	batteryT3LunariteCost = costModel(3300000, batteryT3);
 
-	batteryT4MetalCost = Math.floor(55000000 * Math.pow(1.1,batteryT4));
-	batteryT4GemCost = Math.floor(55000000 * Math.pow(1.1,batteryT4));
-	batteryT4LunariteCost = Math.floor(33000000 * Math.pow(1.1,batteryT4));
+	batteryT4MetalCost = costModel(55000000, batteryT4);
+	batteryT4GemCost = costModel(55000000, batteryT4);
+	batteryT4LunariteCost = costModel(33000000, batteryT4);
 
-	batteryT5MetalCost = Math.floor(490000000 * Math.pow(1.1,batteryT5));
-	batteryT5GemCost = Math.floor(490000000 * Math.pow(1.1,batteryT5));
-	batteryT5LunariteCost = Math.floor(270000000 * Math.pow(1.1,batteryT5));
+	batteryT5MetalCost = costModel(490000000, batteryT5);
+	batteryT5GemCost = costModel(490000000, batteryT5);
+	batteryT5LunariteCost = costModel(270000000, batteryT5);
 
-	charcoalEngineMetalCost = Math.floor(50 * Math.pow(1.1,charcoalEngine));
-	charcoalEngineGemCost = Math.floor(25 * Math.pow(1.1,charcoalEngine));
+	charcoalEngineMetalCost = costModel(50, charcoalEngine);
+	charcoalEngineGemCost = costModel(25, charcoalEngine);
 
-	solarPanelMetalCost = Math.floor(30 * Math.pow(1.1,solarPanel));
-	solarPanelGemCost = Math.floor(35 * Math.pow(1.1,solarPanel));
+	solarPanelMetalCost = costModel(30, solarPanel);
+	solarPanelGemCost = costModel(35, solarPanel);
 
-	methaneStationLunariteCost = Math.floor(110 * Math.pow(1.1,methaneStation));
-	methaneStationTitaniumCost = Math.floor(90 * Math.pow(1.1,methaneStation));
+	methaneStationLunariteCost = costModel(110, methaneStation);
+	methaneStationTitaniumCost = costModel(90, methaneStation);
 
-	nuclearStationLunariteCost = Math.floor(20000 * Math.pow(1.1,nuclearStation));
-	nuclearStationTitaniumCost = Math.floor(10000 * Math.pow(1.1,nuclearStation));
+	nuclearStationLunariteCost = costModel(20000, nuclearStation);
+	nuclearStationTitaniumCost = costModel(10000, nuclearStation);
 
-	magmaticLunariteCost = Math.floor(25000 * Math.pow(1.1,magmatic));
-	magmaticGemCost = Math.floor(30000 * Math.pow(1.1,magmatic));
-	magmaticSilverCost = Math.floor(20000 * Math.pow(1.1,magmatic));
+	magmaticLunariteCost = costModel(25000, magmatic);
+	magmaticGemCost = costModel(30000, magmatic);
+	magmaticSilverCost = costModel(20000, magmatic);
 
-	fusionReactorLunariteCost = Math.floor(30000 * Math.pow(1.1,fusionReactor));
-	fusionReactorTitaniumCost = Math.floor(20000 * Math.pow(1.1,fusionReactor));
-	fusionReactorSiliconCost = Math.floor(15000 * Math.pow(1.1,fusionReactor));
+	fusionReactorLunariteCost = costModel(30000, fusionReactor);
+	fusionReactorTitaniumCost = costModel(20000, fusionReactor);
+	fusionReactorSiliconCost = costModel(15000, fusionReactor);
 
-	grinderTitaniumCost = Math.floor(2000 * Math.pow(1.1,grinder) * T1Price);
-	grinderLunariteCost = Math.floor(4000 * Math.pow(1.1,grinder) * T1Price);
-	grinderGoldCost = Math.floor(2000 * Math.pow(1.1,grinder) * T1Price);
+	grinderTitaniumCost = costModel(2000, grinder) * T1Price;
+	grinderLunariteCost = costModel(4000, grinder) * T1Price;
+	grinderGoldCost = costModel(2000, grinder) * T1Price;
 
-	cubicUraniumCost = Math.floor(80 * Math.pow(1.1,cubic));
-	cubicLunariteCost = Math.floor(10000 * Math.pow(1.1,cubic));
-	cubicOilCost = Math.floor(10000 * Math.pow(1.1,cubic));
+	cubicUraniumCost = costModel(80, cubic);
+	cubicLunariteCost = costModel(10000, cubic);
+	cubicOilCost = costModel(10000, cubic);
 
-	enricherSiliconCost = Math.floor(21700 * Math.pow(1.1,enricher));
-	enricherTitaniumCost = Math.floor(23000 * Math.pow(1.1,enricher));
-	enricherLunariteCost = Math.floor(13500 * Math.pow(1.1,enricher));
+	enricherSiliconCost = costModel(21700, enricher);
+	enricherTitaniumCost = costModel(23000, enricher);
+	enricherLunariteCost = costModel(13500, enricher);
 
-	recyclerMeteoriteCost = Math.floor(830 * Math.pow(1.1,recycler));
-	recyclerMethaneCost = Math.floor(47000 * Math.pow(1.1,recycler));
-	recyclerLunariteCost = Math.floor(93100 * Math.pow(1.1,recycler));
+	recyclerMeteoriteCost = costModel(830, recycler);
+	recyclerMethaneCost = costModel(47000, recycler);
+	recyclerLunariteCost = costModel(93100, recycler);
 
-	pumpMetalCost = Math.floor(60 * Math.pow(1.1,pump) * T1Price);
-	pumpGemCost = Math.floor(20 * Math.pow(1.1,pump) * T1Price);
+	pumpMetalCost = costModel(60, pump) * T1Price;
+	pumpGemCost = costModel(20, pump) * T1Price;
 
-	pumpjackOilCost = Math.floor(50 * Math.pow(1.1,pumpjack));
-	pumpjackGemCost = Math.floor(85 * Math.pow(1.1,pumpjack));
-	pumpjackMetalCost = Math.floor(250 * Math.pow(1.1,pumpjack));
+	pumpjackOilCost = costModel(50, pumpjack);
+	pumpjackGemCost = costModel(85, pumpjack);
+	pumpjackMetalCost = costModel(250, pumpjack);
 
-	oilFieldSiliconCost = Math.floor(3900 * Math.pow(1.1,oilField));
-	oilFieldTitaniumCost = Math.floor(2700 * Math.pow(1.1,oilField));
-	oilFieldLunariteCost = Math.floor(2400 * Math.pow(1.1,oilField));
+	oilFieldSiliconCost = costModel(3900, oilField);
+	oilFieldTitaniumCost = costModel(2700, oilField);
+	oilFieldLunariteCost = costModel(2400, oilField);
 
-	oilRigMeteoriteCost = Math.floor(760 * Math.pow(1.1,oilRig));
-	oilRigTitaniumCost = Math.floor(16800 * Math.pow(1.1,oilRig));
-	oilRigLunariteCost = Math.floor(19400 * Math.pow(1.1,oilRig));
+	oilRigMeteoriteCost = costModel(760, oilRig);
+	oilRigTitaniumCost = costModel(16800, oilRig);
+	oilRigLunariteCost = costModel(19400, oilRig);
 
-	minerWoodCost = Math.floor(5 * Math.pow(1.1,miner) * T1Price);
-	minerMetalCost = Math.floor(10 * Math.pow(1.1,miner) * T1Price);
+	minerWoodCost = costModel(5, miner) * T1Price;
+	minerMetalCost = costModel(10, miner) * T1Price;
 
-	heavyDrillOilCost = Math.floor(50 * Math.pow(1.1,heavyDrill));
-	heavyDrillGemCost = Math.floor(60 * Math.pow(1.1,heavyDrill));
-	heavyDrillMetalCost = Math.floor(160 * Math.pow(1.1,heavyDrill));
+	heavyDrillOilCost = costModel(50, heavyDrill);
+	heavyDrillGemCost = costModel(60, heavyDrill);
+	heavyDrillMetalCost = costModel(160, heavyDrill);
 
-	gigaDrillSiliconCost = Math.floor(4100 * Math.pow(1.1,gigaDrill));
-	gigaDrillGemCost = Math.floor(3400 * Math.pow(1.1,gigaDrill));
-	gigaDrillLunariteCost = Math.floor(2800 * Math.pow(1.1,gigaDrill));
+	gigaDrillSiliconCost = costModel(4100, gigaDrill);
+	gigaDrillGemCost = costModel(3400, gigaDrill);
+	gigaDrillLunariteCost = costModel(2800, gigaDrill);
 
-	quantumDrillMeteoriteCost = Math.floor(900 * Math.pow(1.1,quantumDrill));
-	quantumDrillGoldCost = Math.floor(18700 * Math.pow(1.1,quantumDrill));
-	quantumDrillLunariteCost = Math.floor(29000 * Math.pow(1.1,quantumDrill));
+	quantumDrillMeteoriteCost = costModel(900, quantumDrill);
+	quantumDrillGoldCost = costModel(18700, quantumDrill);
+	quantumDrillLunariteCost = costModel(29000, quantumDrill);
 
-	gemMinerGemCost = Math.floor(10 * Math.pow(1.1,gemMiner) * T1Price);
-	gemMinerMetalCost = Math.floor(15 * Math.pow(1.1,gemMiner) * T1Price);
+	gemMinerGemCost = costModel(10, gemMiner) * T1Price;
+	gemMinerMetalCost = costModel(15, gemMiner) * T1Price;
 
-	advancedDrillOilCost = Math.floor(60 * Math.pow(1.1,advancedDrill));
-	advancedDrillGemCost = Math.floor(200 * Math.pow(1.1,advancedDrill));
-	advancedDrillMetalCost = Math.floor(120 * Math.pow(1.1,advancedDrill));
+	advancedDrillOilCost = costModel(60, advancedDrill);
+	advancedDrillGemCost = costModel(200, advancedDrill);
+	advancedDrillMetalCost = costModel(120, advancedDrill);
 
-	diamondDrillSiliconCost = Math.floor(4500 * Math.pow(1.1,diamondDrill));
-	diamondDrillGemCost = Math.floor(8000 * Math.pow(1.1,diamondDrill));
-	diamondDrillLunariteCost = Math.floor(3400 * Math.pow(1.1,diamondDrill));
+	diamondDrillSiliconCost = costModel(4500, diamondDrill);
+	diamondDrillGemCost = costModel(8000, diamondDrill);
+	diamondDrillLunariteCost = costModel(3400, diamondDrill);
 
-	carbyneDrillMeteoriteCost = Math.floor(800 * Math.pow(1.1,carbyneDrill));
-	carbyneDrillGemCost = Math.floor(27000 * Math.pow(1.1,carbyneDrill));
-	carbyneDrillLunariteCost = Math.floor(21000 * Math.pow(1.1,carbyneDrill));
+	carbyneDrillMeteoriteCost = costModel(800, carbyneDrill);
+	carbyneDrillGemCost = costModel(27000, carbyneDrill);
+	carbyneDrillLunariteCost = costModel(21000, carbyneDrill);
 
-	woodburnerWoodCost = Math.floor(5 * Math.pow(1.1,woodburner) * T1Price);
-	woodburnerMetalCost = Math.floor(10 * Math.pow(1.1,woodburner) * T1Price);
+	woodburnerWoodCost = costModel(5, woodburner) * T1Price;
+	woodburnerMetalCost = costModel(10, woodburner) * T1Price;
 
-	furnaceWoodCost = Math.floor(40 * Math.pow(1.1,furnace));
-	furnaceOilCost = Math.floor(100 * Math.pow(1.1,furnace));
-	furnaceMetalCost = Math.floor(80 * Math.pow(1.1,furnace));
+	furnaceWoodCost = costModel(40, furnace);
+	furnaceOilCost = costModel(100, furnace);
+	furnaceMetalCost = costModel(80, furnace);
 
-	kilnSiliconCost = Math.floor(3800 * Math.pow(1.1,kiln));
-	kilnGemCost = Math.floor(6200 * Math.pow(1.1,kiln));
-	kilnLunariteCost = Math.floor(3500 * Math.pow(1.1,kiln));
+	kilnSiliconCost = costModel(3800, kiln);
+	kilnGemCost = costModel(6200, kiln);
+	kilnLunariteCost = costModel(3500, kiln);
 
-	fryerMeteoriteCost = Math.floor(560 * Math.pow(1.1,fryer));
-	fryerLavaCost = Math.floor(12500 * Math.pow(1.1,fryer));
-	fryerLunariteCost = Math.floor(15800 * Math.pow(1.1,fryer));
+	fryerMeteoriteCost = costModel(560, fryer);
+	fryerLavaCost = costModel(12500, fryer);
+	fryerLunariteCost = costModel(15800, fryer);
 
-	woodcutterWoodCost = Math.floor(5 * Math.pow(1.1,woodcutter) * T1Price);
-	woodcutterMetalCost = Math.floor(10 * Math.pow(1.1,woodcutter) * T1Price);
+	woodcutterWoodCost = costModel(5, woodcutter) * T1Price;
+	woodcutterMetalCost = costModel(10, woodcutter) * T1Price;
 
-	laserCutterOilCost = Math.floor(40 * Math.pow(1.1,laserCutter));
-	laserCutterGemCost = Math.floor(90 * Math.pow(1.1,laserCutter));
-	laserCutterMetalCost = Math.floor(50 * Math.pow(1.1,laserCutter));
+	laserCutterOilCost = costModel(40, laserCutter);
+	laserCutterGemCost = costModel(90, laserCutter);
+	laserCutterMetalCost = costModel(50, laserCutter);
 
-	deforesterLunariteCost = Math.floor(3000 * Math.pow(1.1,deforester));
-	deforesterTitaniumCost = Math.floor(2700 * Math.pow(1.1,deforester));
-	deforesterSiliconCost = Math.floor(2500 * Math.pow(1.1,deforester));
+	deforesterLunariteCost = costModel(3000, deforester);
+	deforesterTitaniumCost = costModel(2700, deforester);
+	deforesterSiliconCost = costModel(2500, deforester);
 
-	infuserLunariteCost = Math.floor(16000 * Math.pow(1.1,infuser));
-	infuserOilCost = Math.floor(31200 * Math.pow(1.1,infuser));
-	infuserMeteoriteCost = Math.floor(490 * Math.pow(1.1,infuser));
+	infuserLunariteCost = costModel(16000, infuser);
+	infuserOilCost = costModel(31200, infuser);
+	infuserMeteoriteCost = costModel(490, infuser);
 
-	moonWorkerGemCost = Math.floor(500 * Math.pow(1.1,moonWorker) * T1Price);
+	moonWorkerGemCost = costModel(500, moonWorker) * T1Price;
 
-	moonDrillOilCost = Math.floor(400 * Math.pow(1.1,moonDrill));
-	moonDrillGemCost = Math.floor(600 * Math.pow(1.1,moonDrill));
-	moonDrillMetalCost = Math.floor(1000 * Math.pow(1.1,moonDrill));
+	moonDrillOilCost = costModel(400, moonDrill);
+	moonDrillGemCost = costModel(600, moonDrill);
+	moonDrillMetalCost = costModel(1000, moonDrill);
 
-	moonQuarrySiliconCost = Math.floor(3500 * Math.pow(1.1,moonQuarry));
-	moonQuarryGemCost = Math.floor(5000 * Math.pow(1.1,moonQuarry));
-	moonQuarryLunariteCost = Math.floor(8000 * Math.pow(1.1,moonQuarry));
+	moonQuarrySiliconCost = costModel(3500, moonQuarry);
+	moonQuarryGemCost = costModel(5000, moonQuarry);
+	moonQuarryLunariteCost = costModel(8000, moonQuarry);
 
-	planetExcavatorMeteoriteCost = Math.floor(500 * Math.pow(1.1,planetExcavator));
-	planetExcavatorIceCost = Math.floor(37000 * Math.pow(1.1,planetExcavator));
-	planetExcavatorTitaniumCost = Math.floor(45000 * Math.pow(1.1,planetExcavator));
+	planetExcavatorMeteoriteCost = costModel(500, planetExcavator);
+	planetExcavatorIceCost = costModel(37000, planetExcavator);
+	planetExcavatorTitaniumCost = costModel(45000, planetExcavator);
 
-	vacuumGemCost = Math.floor(500 * Math.pow(1.1,vacuum) * T1Price);
-	vacuumLunariteCost = Math.floor(50 * Math.pow(1.1,vacuum) * T1Price);
+	vacuumGemCost = costModel(500, vacuum) * T1Price;
+	vacuumLunariteCost = costModel(50, vacuum) * T1Price;
 
-	suctionExcavatorOilCost = Math.floor(600 * Math.pow(1.1,suctionExcavator));
-	suctionExcavatorGemCost = Math.floor(800 * Math.pow(1.1,suctionExcavator));
-	suctionExcavatorLunariteCost = Math.floor(100 * Math.pow(1.1,suctionExcavator));
+	suctionExcavatorOilCost = costModel(600, suctionExcavator);
+	suctionExcavatorGemCost = costModel(800, suctionExcavator);
+	suctionExcavatorLunariteCost = costModel(100, suctionExcavator);
 
-	spaceCowSiliconCost = Math.floor(3900 * Math.pow(1.1,spaceCow));
-	spaceCowTitaniumCost = Math.floor(2700 * Math.pow(1.1,spaceCow));
-	spaceCowLunariteCost = Math.floor(2400 * Math.pow(1.1,spaceCow));
+	spaceCowSiliconCost = costModel(3900, spaceCow);
+	spaceCowTitaniumCost = costModel(2700, spaceCow);
+	spaceCowLunariteCost = costModel(2400, spaceCow);
 
-	ventMeteoriteCost = Math.floor(390 * Math.pow(1.1,vent));
-	ventHeliumCost = Math.floor(47000 * Math.pow(1.1,vent));
-	ventLunariteCost = Math.floor(52000 * Math.pow(1.1,vent));
+	ventMeteoriteCost = costModel(390, vent);
+	ventHeliumCost = costModel(47000, vent);
+	ventLunariteCost = costModel(52000, vent);
 
-	explorerGemCost = Math.floor(1000 * Math.pow(1.1,explorer) * T1Price);
+	explorerGemCost = costModel(1000, explorer) * T1Price;
 
-	lunariteDrillOilCost = Math.floor(1000 * Math.pow(1.1,lunariteDrill));
-	lunariteDrillGemCost = Math.floor(800 * Math.pow(1.1,lunariteDrill));
-	lunariteDrillLunariteCost = Math.floor(200 * Math.pow(1.1,lunariteDrill));
+	lunariteDrillOilCost = costModel(1000, lunariteDrill);
+	lunariteDrillGemCost = costModel(800, lunariteDrill);
+	lunariteDrillLunariteCost = costModel(200, lunariteDrill);
 
-	pentaDrillSiliconCost = Math.floor(5600 * Math.pow(1.1,pentaDrill));
-	pentaDrillGemCost = Math.floor(11000 * Math.pow(1.1,pentaDrill));
-	pentaDrillLunariteCost = Math.floor(14000 * Math.pow(1.1,pentaDrill));
+	pentaDrillSiliconCost = costModel(5600, pentaDrill);
+	pentaDrillGemCost = costModel(11000, pentaDrill);
+	pentaDrillLunariteCost = costModel(14000, pentaDrill);
 
-	titanDrillLunariteCost = Math.floor(63000 * Math.pow(1.1,titanDrill));
-	titanDrillGoldCost = Math.floor(27000 * Math.pow(1.1,titanDrill));
-	titanDrillMeteoriteCost = Math.floor(600 * Math.pow(1.1,titanDrill));
+	titanDrillLunariteCost = costModel(63000, titanDrill);
+	titanDrillGoldCost = costModel(27000, titanDrill);
+	titanDrillMeteoriteCost = costModel(600, titanDrill);
 
-	droidMethaneCost = Math.floor(50 * Math.pow(1.1,droid) * T1Price);
-	droidLunariteCost = Math.floor(200 * Math.pow(1.1,droid) * T1Price);
+	droidMethaneCost = costModel(50, droid) * T1Price;
+	droidLunariteCost = costModel(200, droid) * T1Price;
 
-	destroyerOilCost = Math.floor(1000 * Math.pow(1.1,destroyer));
-	destroyerGemCost = Math.floor(1500 * Math.pow(1.1,destroyer));
-	destroyerLunariteCost = Math.floor(500 * Math.pow(1.1,destroyer));
+	destroyerOilCost = costModel(1000, destroyer);
+	destroyerGemCost = costModel(1500, destroyer);
+	destroyerLunariteCost = costModel(500, destroyer);
 
-	deathStarSiliconCost = Math.floor(8200 * Math.pow(1.1,deathStar));
-	deathStarSilverCost = Math.floor(11500 * Math.pow(1.1,deathStar));
-	deathStarLunariteCost = Math.floor(17000 * Math.pow(1.1,deathStar));
+	deathStarSiliconCost = costModel(8200, deathStar);
+	deathStarSilverCost = costModel(11500, deathStar);
+	deathStarLunariteCost = costModel(17000, deathStar);
 
-	actuatorMeteoriteCost = Math.floor(600 * Math.pow(1.1,actuator));
-	actuatorHeliumCost = Math.floor(15700 * Math.pow(1.1,actuator));
-	actuatorLunariteCost = Math.floor(61000 * Math.pow(1.1,actuator));
+	actuatorMeteoriteCost = costModel(600, actuator);
+	actuatorHeliumCost = costModel(15700, actuator);
+	actuatorLunariteCost = costModel(61000, actuator);
 
-	scoutTitaniumCost = Math.floor(20 * Math.pow(1.1,scout) * T1Price);
-	scoutLunariteCost = Math.floor(100 * Math.pow(1.1,scout) * T1Price);
+	scoutTitaniumCost = costModel(20, scout) * T1Price;
+	scoutLunariteCost = costModel(100, scout) * T1Price;
 
-	spaceLaserOilCost = Math.floor(1200 * Math.pow(1.1,spaceLaser));
-	spaceLaserGemCost = Math.floor(900 * Math.pow(1.1,spaceLaser));
-	spaceLaserLunariteCost = Math.floor(350 * Math.pow(1.1,spaceLaser));
+	spaceLaserOilCost = costModel(1200, spaceLaser);
+	spaceLaserGemCost = costModel(900, spaceLaser);
+	spaceLaserLunariteCost = costModel(350, spaceLaser);
 
-	berthaSiliconCost = Math.floor(11000 * Math.pow(1.1,bertha));
-	berthaTitaniumCost = Math.floor(18200 * Math.pow(1.1,bertha));
-	berthaLunariteCost = Math.floor(19500 * Math.pow(1.1,bertha));
+	berthaSiliconCost = costModel(11000, bertha);
+	berthaTitaniumCost = costModel(18200, bertha);
+	berthaLunariteCost = costModel(19500, bertha);
 
-	cannonMeteoriteCost = Math.floor(520 * Math.pow(1.1,cannon));
-	cannonOilCost = Math.floor(93800 * Math.pow(1.1,cannon));
-	cannonLunariteCost = Math.floor(85100 * Math.pow(1.1,cannon));
+	cannonMeteoriteCost = costModel(520, cannon);
+	cannonOilCost = costModel(93800, cannon);
+	cannonLunariteCost = costModel(85100, cannon);
 
-	blowtorchTitaniumCost = Math.floor(30 * Math.pow(1.1,blowtorch) * T1Price);
-	blowtorchLunariteCost = Math.floor(150 * Math.pow(1.1,blowtorch) * T1Price);
+	blowtorchTitaniumCost = costModel(30, blowtorch) * T1Price;
+	blowtorchLunariteCost = costModel(150, blowtorch) * T1Price;
 
-	scorcherOilCost = Math.floor(1600 * Math.pow(1.1,scorcher));
-	scorcherGemCost = Math.floor(1200 * Math.pow(1.1,scorcher));
-	scorcherLunariteCost = Math.floor(500 * Math.pow(1.1,scorcher));
+	scorcherOilCost = costModel(1600, scorcher);
+	scorcherGemCost = costModel(1200, scorcher);
+	scorcherLunariteCost = costModel(500, scorcher);
 
-	annihilatorLunariteCost = Math.floor(3000 * Math.pow(1.1,annihilator));
-	annihilatorGemCost = Math.floor(8300 * Math.pow(1.1,annihilator));
-	annihilatorSilverCost = Math.floor(2400 * Math.pow(1.1,annihilator));
+	annihilatorLunariteCost = costModel(3000, annihilator);
+	annihilatorGemCost = costModel(8300, annihilator);
+	annihilatorSilverCost = costModel(2400, annihilator);
 
-	desertLunariteCost = Math.floor(20000 * Math.pow(1.1,desert));
-	desertSiliconCost = Math.floor(17700 * Math.pow(1.1,desert));
-	desertMeteoriteCost = Math.floor(400 * Math.pow(1.1,desert));
+	desertLunariteCost = costModel(20000, desert);
+	desertSiliconCost = costModel(17700, desert);
+	desertMeteoriteCost = costModel(400, desert);
 
-	crucibleGemCost = Math.floor(7000 * Math.pow(1.1,crucible) * T1Price);
-	crucibleLunariteCost = Math.floor(4000 * Math.pow(1.1,crucible) * T1Price);
+	crucibleGemCost = costModel(7000, crucible) * T1Price;
+	crucibleLunariteCost = costModel(4000, crucible) * T1Price;
 
-	extractorSiliconCost = Math.floor(6000 * Math.pow(1.1,extractor));
-	extractorTitaniumCost = Math.floor(12000 * Math.pow(1.1,extractor));
-	extractorLunariteCost = Math.floor(14000 * Math.pow(1.1,extractor));
+	extractorSiliconCost = costModel(6000, extractor);
+	extractorTitaniumCost = costModel(12000, extractor);
+	extractorLunariteCost = costModel(14000, extractor);
 
-	extruderSiliconCost = Math.floor(39000 * Math.pow(1.1,extruder));
-	extruderTitaniumCost = Math.floor(57000 * Math.pow(1.1,extruder));
-	extruderLunariteCost = Math.floor(69000 * Math.pow(1.1,extruder));
+	extruderSiliconCost = costModel(39000, extruder);
+	extruderTitaniumCost = costModel(57000, extruder);
+	extruderLunariteCost = costModel(69000, extruder);
 
-	veluptuatorMeteoriteCost = Math.floor(750 * Math.pow(1.1,veluptuator));
-	veluptuatorGoldCost = Math.floor(121000 * Math.pow(1.1,veluptuator));
-	veluptuatorLunariteCost = Math.floor(298000 * Math.pow(1.1,veluptuator));
+	veluptuatorMeteoriteCost = costModel(750, veluptuator);
+	veluptuatorGoldCost = costModel(121000, veluptuator);
+	veluptuatorLunariteCost = costModel(298000, veluptuator);
 
-	collectorTitaniumCost = Math.floor(4800 * Math.pow(1.1,collector) * T1Price);
-	collectorLunariteCost = Math.floor(6000 * Math.pow(1.1,collector) * T1Price);
+	collectorTitaniumCost = costModel(4800, collector) * T1Price;
+	collectorLunariteCost = costModel(6000, collector) * T1Price;
 
-	magnetGoldCost = Math.floor(6600 * Math.pow(1.1,magnet));
-	magnetTitaniumCost = Math.floor(9600 * Math.pow(1.1,magnet));
-	magnetLunariteCost = Math.floor(10800 * Math.pow(1.1,magnet));
+	magnetGoldCost = costModel(6600, magnet);
+	magnetTitaniumCost = costModel(9600, magnet);
+	magnetLunariteCost = costModel(10800, magnet);
 
-	eCellGoldCost = Math.floor(34200 * Math.pow(1.1,eCell));
-	eCellSiliconCost = Math.floor(25800 * Math.pow(1.1,eCell));
-	eCellSilverCost = Math.floor(37200 * Math.pow(1.1,eCell));
+	eCellGoldCost = costModel(34200, eCell);
+	eCellSiliconCost = costModel(25800, eCell);
+	eCellSilverCost = costModel(37200, eCell);
 
-	hindenburgMeteoriteCost = Math.floor(710 * Math.pow(1.1,hindenburg));
-	hindenburgMethaneCost = Math.floor(134000 * Math.pow(1.1,hindenburg));
-	hindenburgLunariteCost = Math.floor(172000 * Math.pow(1.1,hindenburg));
+	hindenburgMeteoriteCost = costModel(710, hindenburg);
+	hindenburgMethaneCost = costModel(134000, hindenburg);
+	hindenburgLunariteCost = costModel(172000, hindenburg);
 
-	droneSiliconCost = Math.floor(6000 * Math.pow(1.1,drone) * T1Price);
-	droneLunariteCost = Math.floor(8400 * Math.pow(1.1,drone) * T1Price);
+	droneSiliconCost = costModel(6000, drone) * T1Price;
+	droneLunariteCost = costModel(8400, drone) * T1Price;
 
-	tankerSiliconCost = Math.floor(8400 * Math.pow(1.1,tanker));
-	tankerTitaniumCost = Math.floor(10200 * Math.pow(1.1,tanker));
-	tankerLunariteCost = Math.floor(12600 * Math.pow(1.1,tanker));
+	tankerSiliconCost = costModel(8400, tanker);
+	tankerTitaniumCost = costModel(10200, tanker);
+	tankerLunariteCost = costModel(12600, tanker);
 
-	compressorSiliconCost = Math.floor(35400 * Math.pow(1.1,compressor));
-	compressorTitaniumCost = Math.floor(43800 * Math.pow(1.1,compressor));
-	compressorLunariteCost = Math.floor(63000 * Math.pow(1.1,compressor));
+	compressorSiliconCost = costModel(35400, compressor);
+	compressorTitaniumCost = costModel(43800, compressor);
+	compressorLunariteCost = costModel(63000, compressor);
 
-	skimmerMeteoriteCost = Math.floor(770 * Math.pow(1.1,skimmer));
-	skimmerTitaniumCost = Math.floor(173000 * Math.pow(1.1,skimmer));
-	skimmerLunariteCost = Math.floor(255000 * Math.pow(1.1,skimmer));
+	skimmerMeteoriteCost = costModel(770, skimmer);
+	skimmerTitaniumCost = costModel(173000, skimmer);
+	skimmerLunariteCost = costModel(255000, skimmer);
 
-	icePickGemCost = Math.floor(19300 * Math.pow(1.1,icePick) * T1Price);
-	icePickLunariteCost = Math.floor(17800 * Math.pow(1.1,icePick) * T1Price);
+	icePickGemCost = costModel(19300, icePick) * T1Price;
+	icePickLunariteCost = costModel(17800, icePick) * T1Price;
 
-	iceDrillSiliconCost = Math.floor(19600 * Math.pow(1.1,iceDrill));
-	iceDrillTitaniumCost = Math.floor(21200 * Math.pow(1.1,iceDrill));
-	iceDrillLunariteCost = Math.floor(23900 * Math.pow(1.1,iceDrill));
+	iceDrillSiliconCost = costModel(19600, iceDrill);
+	iceDrillTitaniumCost = costModel(21200, iceDrill);
+	iceDrillLunariteCost = costModel(23900, iceDrill);
 
-	freezerSiliconCost = Math.floor(73000 * Math.pow(1.1,freezer));
-	freezerTitaniumCost = Math.floor(86000 * Math.pow(1.1,freezer));
-	freezerLunariteCost = Math.floor(117000 * Math.pow(1.1,freezer));
+	freezerSiliconCost = costModel(73000, freezer);
+	freezerTitaniumCost = costModel(86000, freezer);
+	freezerLunariteCost = costModel(117000, freezer);
 
-	mrFreezeMeteoriteCost = Math.floor(1500 * Math.pow(1.1,mrFreeze));
-	mrFreezeHeliumCost = Math.floor(14000 * Math.pow(1.1,mrFreeze));
-	mrFreezeWoodCost = Math.floor(379000 * Math.pow(1.1,mrFreeze));
+	mrFreezeMeteoriteCost = costModel(1500, mrFreeze);
+	mrFreezeHeliumCost = costModel(14000, mrFreeze);
+	mrFreezeWoodCost = costModel(379000, mrFreeze);
 
-	printerLunariteCost = Math.floor(100000 * Math.pow(1.1,printer) * T1Price);
-	printerSiliconCost = Math.floor(50000 * Math.pow(1.1,printer) * T1Price);
+	printerLunariteCost = costModel(100000, printer) * T1Price;
+	printerSiliconCost = costModel(50000, printer) * T1Price;
 
-	webLunariteCost = Math.floor(940000 * Math.pow(1.1,web));
-	webUraniumCost = Math.floor(490000 * Math.pow(1.1,web));
-	webSiliconCost = Math.floor(510000 * Math.pow(1.1,web));
+	webLunariteCost = costModel(940000, web);
+	webUraniumCost = costModel(490000, web);
+	webSiliconCost = costModel(510000, web);
 
-	smasherSiliconCost = Math.floor(3230000 * Math.pow(1.1,smasher));
-	smasherSilverCost = Math.floor(5890000 * Math.pow(1.1,smasher));
-	smasherGemCost = Math.floor(8340000 * Math.pow(1.1,smasher));
+	smasherSiliconCost = costModel(3230000, smasher);
+	smasherSilverCost = costModel(5890000, smasher);
+	smasherGemCost = costModel(8340000, smasher);
 
-	nebulousLunariteCost = Math.floor(25800000 * Math.pow(1.1,nebulous));
-	nebulousLavaCost = Math.floor(19700000 * Math.pow(1.1,nebulous));
-	nebulousGoldCost = Math.floor(21900000 * Math.pow(1.1,nebulous));
+	nebulousLunariteCost = costModel(25800000, nebulous);
+	nebulousLavaCost = costModel(19700000, nebulous);
+	nebulousGoldCost = costModel(21900000, nebulous);
 
 	/********************
 	** Tier 5 Machines **
 	********************/
 
-	planetNukeTitaniumCost = Math.floor(486000 * Math.pow(1.1,planetNuke));
-	planetNukeSiliconCost = Math.floor(266000 * Math.pow(1.1,planetNuke));
-	planetNukeIceCost = Math.floor(364000 * Math.pow(1.1,planetNuke));
+	planetNukeTitaniumCost = costModel(486000, planetNuke);
+	planetNukeSiliconCost = costModel(266000, planetNuke);
+	planetNukeIceCost = costModel(364000, planetNuke);
 
-	condensatorLunariteCost = Math.floor(288000 * Math.pow(1.1, condensator)); 
-	condensatorGemCost = Math.floor(210000 * Math.pow(1.1, condensator)); 
-	condensatorIceCost = Math.floor(238000 * Math.pow(1.1, condensator));
+	condensatorLunariteCost = costModel(288000, condensator); 
+	condensatorGemCost = costModel(210000, condensator); 
+	condensatorIceCost = costModel(238000, condensator);
 
-	fossilatorUraniumCost = Math.floor(110000 * Math.pow(1.1, fossilator)); 
-	fossilatorCharcoalCost = Math.floor(96000 * Math.pow(1.1, fossilator)); 
-	fossilatorLavaCost = Math.floor(167000 * Math.pow(1.1, fossilator));
+	fossilatorUraniumCost = costModel(110000, fossilator); 
+	fossilatorCharcoalCost = costModel(96000, fossilator); 
+	fossilatorLavaCost = costModel(167000, fossilator);
 
-	multiDrillTitaniumCost = Math.floor(184000 * Math.pow(1.1, multiDrill)); 
-	multiDrillGoldCost = Math.floor(184000 * Math.pow(1.1, multiDrill)); 
-	multiDrillOilCost = Math.floor(170000 * Math.pow(1.1, multiDrill));
+	multiDrillTitaniumCost = costModel(184000, multiDrill); 
+	multiDrillGoldCost = costModel(184000, multiDrill); 
+	multiDrillOilCost = costModel(170000, multiDrill);
 
-	diamondChamberUraniumCost = Math.floor(181000 * Math.pow(1.1, diamondChamber)); 
-	diamondChamberCharcoalCost = Math.floor(185000 * Math.pow(1.1, diamondChamber)); 
-	diamondChamberMeteoriteCost = Math.floor(12500 * Math.pow(1.1, diamondChamber));
+	diamondChamberUraniumCost = costModel(181000, diamondChamber); 
+	diamondChamberCharcoalCost = costModel(185000, diamondChamber); 
+	diamondChamberMeteoriteCost = costModel(12500, diamondChamber);
 
-	microPollutorMetalCost = Math.floor(133000 * Math.pow(1.1, microPollutor)); 
-	microPollutorWoodCost = Math.floor(189000 * Math.pow(1.1, microPollutor)); 
-	microPollutorLavaCost = Math.floor(160000 * Math.pow(1.1, microPollutor));
+	microPollutorMetalCost = costModel(133000, microPollutor); 
+	microPollutorWoodCost = costModel(189000, microPollutor); 
+	microPollutorLavaCost = costModel(160000, microPollutor);
 
-	forestMetalCost = Math.floor(122000 * Math.pow(1.1, forest)); 
-	forestGemCost = Math.floor(151000 * Math.pow(1.1, forest)); 
-	forestHydrogenCost = Math.floor(183000 * Math.pow(1.1, forest));
+	forestMetalCost = costModel(122000, forest); 
+	forestGemCost = costModel(151000, forest); 
+	forestHydrogenCost = costModel(183000, forest);
 
-	clonerTitaniumCost = Math.floor(204000 * Math.pow(1.1, cloner)); 
-	clonerGoldCost = Math.floor(150000 * Math.pow(1.1, cloner)); 
-	clonerMethaneCost = Math.floor(195000 * Math.pow(1.1, cloner));
+	clonerTitaniumCost = costModel(204000, cloner); 
+	clonerGoldCost = costModel(150000, cloner); 
+	clonerMethaneCost = costModel(195000, cloner);
 
-	interCowLunariteCost = Math.floor(140000 * Math.pow(1.1, interCow)); 
-	interCowGoldCost = Math.floor(202000 * Math.pow(1.1, interCow)); 
-	interCowHydrogenCost = Math.floor(158000 * Math.pow(1.1, interCow));
+	interCowLunariteCost = costModel(140000, interCow); 
+	interCowGoldCost = costModel(202000, interCow); 
+	interCowHydrogenCost = costModel(158000, interCow);
 
-	clubUraniumCost = Math.floor(175000 * Math.pow(1.1, club)); 
-	clubWoodCost = Math.floor(164000 * Math.pow(1.1, club)); 
-	clubHeliumCost = Math.floor(156000 * Math.pow(1.1, club));
+	clubUraniumCost = costModel(175000, club); 
+	clubWoodCost = costModel(164000, club); 
+	clubHeliumCost = costModel(156000, club);
 
-	philosopherMetalCost = Math.floor(208000 * Math.pow(1.1, philosopher)); 
-	philosopherSilverCost = Math.floor(167000 * Math.pow(1.1, philosopher)); 
-	philosopherMeteoriteCost = Math.floor(18000 * Math.pow(1.1, philosopher));
+	philosopherMetalCost = costModel(208000, philosopher); 
+	philosopherSilverCost = costModel(167000, philosopher); 
+	philosopherMeteoriteCost = costModel(18000, philosopher);
 
-	werewolfUraniumCost = Math.floor(165000 * Math.pow(1.1, werewolf)); 
-	werewolfGemCost = Math.floor(209000 * Math.pow(1.1, werewolf)); 
-	werewolfMethaneCost = Math.floor(170000 * Math.pow(1.1, werewolf));
+	werewolfUraniumCost = costModel(165000, werewolf); 
+	werewolfGemCost = costModel(209000, werewolf); 
+	werewolfMethaneCost = costModel(170000, werewolf);
 
-	tardisTitaniumCost = Math.floor(204000 * Math.pow(1.1, tardis)); 
-	tardisSiliconCost = Math.floor(205000 * Math.pow(1.1, tardis)); 
-	tardisMeteoriteCost = Math.floor(17800 * Math.pow(1.1, tardis));
+	tardisTitaniumCost = costModel(204000, tardis); 
+	tardisSiliconCost = costModel(205000, tardis); 
+	tardisMeteoriteCost = costModel(17800, tardis);
 
-	harvesterLunariteCost = Math.floor(250000 * Math.pow(1.1, harvester)); 
-	harvesterWoodCost = Math.floor(184000 * Math.pow(1.1, harvester)); 
-	harvesterOilCost = Math.floor(146000 * Math.pow(1.1, harvester));
+	harvesterLunariteCost = costModel(250000, harvester); 
+	harvesterWoodCost = costModel(184000, harvester); 
+	harvesterOilCost = costModel(146000, harvester);
 
-	cageLunariteCost = Math.floor(171000 * Math.pow(1.1, cage)); 
-	cageSiliconCost = Math.floor(165000 * Math.pow(1.1, cage)); 
-	cageMeteoriteCost = Math.floor(18600 * Math.pow(1.1, cage));
+	cageLunariteCost = costModel(171000, cage); 
+	cageSiliconCost = costModel(165000, cage); 
+	cageMeteoriteCost = costModel(18600, cage);
 
-	overexchangeMetalCost = Math.floor(210000 * Math.pow(1.1, overexchange)); 
-	overexchangeSilverCost = Math.floor(188000 * Math.pow(1.1, overexchange)); 
-	overexchangeHeliumCost = Math.floor(204000 * Math.pow(1.1, overexchange));
+	overexchangeMetalCost = costModel(210000, overexchange); 
+	overexchangeSilverCost = costModel(188000, overexchange); 
+	overexchangeHeliumCost = costModel(204000, overexchange);
 
+}
+
+function costModel(base_cost, unit_count){
+  // https://www.desmos.com/calculator/8epfkr53t7
+  return base_cost + base_cost * Math.floor(unit_count / 30);
 }
 
 function getPSU(){

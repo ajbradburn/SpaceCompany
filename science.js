@@ -51,25 +51,30 @@ function getLabT5(){
 }
 
 function updateLabCost(){
-	labWoodCost = Math.floor(10 * Math.pow(1.1,lab) * labT1Multi);
-	labGemCost = Math.floor(15 * Math.pow(1.1,lab) * labT1Multi);
-	labMetalCost = Math.floor(20 * Math.pow(1.1,lab) * labT1Multi);
+	labWoodCost = labCostModel(10, lab) * labT1Multi;
+	labGemCost = labCostModel(15, lab) * labT1Multi;
+	labMetalCost = labCostModel(20, lab) * labT1Multi;
 
-	labT2WoodCost = Math.floor(500 * Math.pow(1.1,labT2) * labT2PlusMulti);
-	labT2GemCost = Math.floor(200 * Math.pow(1.1,labT2) * labT2PlusMulti);
-	labT2MetalCost = Math.floor(1000 * Math.pow(1.1,labT2) * labT2PlusMulti);
+	labT2WoodCost = labCostModel(500, labT2) * labT2PlusMulti;
+	labT2GemCost = labCostModel(200, labT2) * labT2PlusMulti;
+	labT2MetalCost = labCostModel(1000, labT2) * labT2PlusMulti;
 
-	labT3WoodCost = Math.floor(9600 * Math.pow(1.1,labT3) * labT2PlusMulti);
-	labT3GemCost = Math.floor(4700 * Math.pow(1.1,labT3) * labT2PlusMulti);
-	labT3MetalCost = Math.floor(17000 * Math.pow(1.1,labT3) * labT2PlusMulti);
+	labT3WoodCost = labCostModel(9600, labT3) * labT2PlusMulti;
+	labT3GemCost = labCostModel(4700, labT3) * labT2PlusMulti;
+	labT3MetalCost = labCostModel(17000, labT3) * labT2PlusMulti;
 
-	labT4MetalCost = Math.floor(610000 * Math.pow(1.1,labT4) * labT2PlusMulti);
-	labT4GemCost = Math.floor(37000 * Math.pow(1.1,labT4) * labT2PlusMulti);
-	labT4WoodCost = Math.floor(926000 * Math.pow(1.1,labT4) * labT2PlusMulti);
+	labT4MetalCost = labCostModel(610000, labT4) * labT2PlusMulti;
+	labT4GemCost = labCostModel(37000, labT4) * labT2PlusMulti;
+	labT4WoodCost = labCostModel(926000, labT4) * labT2PlusMulti;
 
-	labT5MetalCost = Math.floor(12400000 * Math.pow(1.1,labT5) * labT2PlusMulti);
-	labT5GemCost = Math.floor(7300000 * Math.pow(1.1,labT5) * labT2PlusMulti);
-	labT5WoodCost = Math.floor(15900000 * Math.pow(1.1,labT5) * labT2PlusMulti);
+	labT5MetalCost = labCostModel(12400000, labT5) * labT2PlusMulti;
+	labT5GemCost = labCostModel(7300000, labT5) * labT2PlusMulti;
+	labT5WoodCost = labCostModel(15900000, labT5) * labT2PlusMulti;
+}
+
+function labCostModel(base_cost, unit_count){
+  // https://www.desmos.com/calculator/8epfkr53t7
+  return base_cost + base_cost * Math.floor(unit_count / 30);
 }
 
 function purchaseTech(id) {
